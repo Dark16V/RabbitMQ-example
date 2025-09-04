@@ -8,7 +8,7 @@ connection_params = ConnectionParameters(
 )
 
 
-def proccess_message(ch, method, body):
+def proccess_message(ch, method, properties, body):
     print(f'Received message: {body.decode()}')
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
